@@ -27,7 +27,6 @@
             AccountBalance = AccountBalance - WithdrawAmount;
         }
 
-
         Console.WriteLine($"Updated Balance: {Math.Round(AccountBalance,2)}");
         Console.WriteLine($"Transaction Time: {DateTime.Now}");
     }
