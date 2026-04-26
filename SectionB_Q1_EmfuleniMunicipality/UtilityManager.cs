@@ -66,6 +66,11 @@ namespace SectionB_Q1_EmfuleniMunicipality
             }
 
             ServiceRequest highest = ResolvedRequests[0];
+            if (ResolvedRequests.Count == 0)
+            {
+                Console.WriteLine("No requests have been resolved.");
+                return; 
+            }
             foreach (var serviceRequest in ResolvedRequests)
             {
                 if (serviceRequest.UrgencyScore > highest.UrgencyScore)

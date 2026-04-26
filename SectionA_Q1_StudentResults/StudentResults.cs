@@ -14,11 +14,23 @@ class StudentResults
 
         List<int> StudentMarks = new List<int>();
 
-
+        
         for (int i = 1; i < 4; i++)
         {
-            Console.WriteLine($"Enter mark for Subject {i} :");
-            StudentMarks.Add(int.Parse(Console.ReadLine()));
+            bool validInput = false;
+            while (!validInput)
+            {
+                Console.WriteLine($"Enter mark for Subject {i} :");
+                try
+                {
+                    StudentMarks.Add(int.Parse(Console.ReadLine()));
+                    validInput = true; 
+                }
+                catch 
+                {
+                    Console.WriteLine($"Please enter a value ");
+                }
+            }
         }
 
         int SumMarks = StudentMarks.Sum();

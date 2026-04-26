@@ -9,12 +9,38 @@
 
         Console.WriteLine($"Welcome {Name}!");
 
-        Console.Write("Enter account balance: ");
-        double AccountBalance = double.Parse(Console.ReadLine());
+        double AccountBalance = 0;
+        bool validBalance = false;
+        while (!validBalance)
+        {
+            Console.Write("Enter account balance: ");
+            try
+            {
+                AccountBalance = double.Parse(Console.ReadLine());
+                validBalance = true;
+            }
+            catch
+            {
+                Console.WriteLine("Please enter a valid number");
+            }
+        }
+        
 
-        Console.Write($"Enter Withdraw amount: ");
-        double WithdrawAmount = double.Parse(Console.ReadLine());
-    
+        double WithdrawAmount = 0;
+        bool validWithdraw = false;
+        while (!validWithdraw)
+        {
+            Console.Write("Enter withdrawal amount: ");
+            try
+            {
+                WithdrawAmount = double.Parse(Console.ReadLine());
+                validWithdraw = true;
+            }
+            catch
+            {
+                Console.WriteLine("Please enter a valid number");
+            }
+        }
 
         if (AccountBalance < WithdrawAmount)
         {
