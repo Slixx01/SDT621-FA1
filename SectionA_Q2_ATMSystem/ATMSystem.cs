@@ -9,10 +9,10 @@
 
         Console.WriteLine($"Welcome {Name}!");
 
-        Console.WriteLine("Enter account balance: ");
+        Console.Write("Enter account balance: ");
         double AccountBalance = double.Parse(Console.ReadLine());
 
-        Console.WriteLine($"Enter Withdraw amount: ");
+        Console.Write($"Enter Withdraw amount: ");
         double WithdrawAmount = double.Parse(Console.ReadLine());
     
 
