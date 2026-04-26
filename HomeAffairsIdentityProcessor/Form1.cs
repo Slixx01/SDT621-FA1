@@ -11,7 +11,7 @@ namespace HomeAffairsIdentityProcessor
             cmbCitizen.Items.Add("Permanent Residant");
             cmbCitizen.Items.Add("Visitor");
             cmbCitizen.Items.Add("South African");
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -41,16 +41,15 @@ namespace HomeAffairsIdentityProcessor
             string Id = txtId.Text;
             CitizenProfile profile = new CitizenProfile(name, Id);
 
-            txtProfile.Text = $"""
-                ==== DIGITAL CITIZEN SUMMARY ====
-                Name: {profile.Name}
-                ID Number: {profile.IdNumber}
-                Age: {profile.Age}
-                Citizenship: {cmbCitizen.Text}
-                Validation : {profile.ValidateID()}
-                Processed at: Home Affairs Digital Desk
-                Timestamp: {DateTime.Now}
-                """;
+            txtProfile.Text =
+            "==== DIGITAL CITIZEN SUMMARY ====\r\n" +
+            "Name: " + profile.Name + "\r\n" +
+            "ID Number: " + profile.IdNumber + "\r\n" +
+            "Age: " + profile.Age + "\r\n" +
+            "Citizenship: " + cmbCitizen.Text + "\r\n" +
+            "Validation: " + profile.ValidateID() + "\r\n" +
+            "Processed at: Home Affairs Digital Desk\r\n" +
+            "Timestamp: " + DateTime.Now;
 
         }
 
